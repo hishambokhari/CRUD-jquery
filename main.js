@@ -28,9 +28,17 @@ $('ul').on('click','li',function(){
     if(event.which === 13){
 
       var task = $('input').val()
-      $('ul').append("<li><span> ~ </span>" + task + "</li>")
+      $('ul').append("<li><span class='delete'> <i class='fa fa-trash'></i></span>" + task + "</li>")
       $('input').val("")
     }
 
+
+  })
+
+  // Toggling the input form
+
+  $('#plus').click(function(){
+
+    $('input').fadeToggle()
 
   })
