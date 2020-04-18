@@ -1,6 +1,6 @@
 // Strike through 
 
-$('li').click(function(){
+$('ul').on('click','li',function(){
 
   $(this).toggleClass('done')
 })
@@ -10,7 +10,7 @@ $('li').click(function(){
 
 // Deleting 
 
-  $('span').click(function(event){
+  $('ul').on('click','span',function(event){
 
     $(this).parent().fadeOut(200, function(){
 
@@ -22,3 +22,15 @@ $('li').click(function(){
 
 
 // Adding 
+
+  $('input').keypress(function(event){
+
+    if(event.which === 13){
+
+      var task = $('input').val()
+      $('ul').append("<li><span> ~ </span>" + task + "</li>")
+      $('input').val("")
+    }
+
+
+  })
